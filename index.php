@@ -8,7 +8,6 @@ $data = json_decode(file_get_contents('php://input'));
 
 switch ($data->type) {
     case 'confirmation':
-        return getenv('CONFIRMATION_TOKEN');
-    default:
-        return '404';
+        echo getenv('CONFIRMATION_TOKEN');
+        break;
 }
