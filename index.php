@@ -1,8 +1,12 @@
 <?php
 
-$type = json_decode($_POST);
+if (!isset($_REQUEST)) {
+    return;
+}
 
-switch ($type->type) {
+$data = json_decode(file_get_contents('php://input'));
+
+switch ($data->type) {
     case 'confirmation':
         return getenv('CONFIRMATION_TOKEN');
     default:
