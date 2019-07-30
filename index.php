@@ -1,8 +1,8 @@
 <?php
 
-$type = $_POST['type'];
+$type = json_decode($_POST);
 
-switch ($type) {
+switch ($type->type) {
     case 'confirmation':
         return getenv('CONFIRMATION_TOKEN');
     default:
