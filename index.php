@@ -9,7 +9,8 @@ $data = json_decode(file_get_contents('php://input'));
 if (file_exists('vendor/autoload.php')) {
     require_once 'vendor/autoload.php';
     $dotenv = new Symfony\Component\Dotenv\Dotenv();
-    $dotenv->load(__DIR__ . '/.env');
+    $file = file_exists('.env') ? '.env' : '.env.example';
+    $dotenv->load($file);
 }
 
 require_once 'vk_api.php';
