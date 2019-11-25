@@ -5,6 +5,7 @@ function sendMessage($message, $attachment, $peer_id) {
         'message' => $message,
         'attachment' => $attachment,
         'peer_id' => $peer_id,
+        'random_id' => 0,
         'access_token' => getenv('ACCESS_TOKEN'),
         'v' => getenv('VK_API_VERSION')
     ]);
