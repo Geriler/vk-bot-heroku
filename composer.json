@@ -1,6 +1,17 @@
 {
     "require": {
         "symfony/dotenv": "^4.3",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "VKBot\\": "src/"
+        }
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "@composer dump-autoload"
+        ]
     }
 }
